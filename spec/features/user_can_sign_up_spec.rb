@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "New Users", type: :feature do
   scenario "user sign up" do
@@ -8,6 +8,6 @@ RSpec.feature "New Users", type: :feature do
     fill_in :user_password, with: "123456"
     fill_in :user_password_confirmation, with: "123456"
     click_button "Sign up"
-    expect(page).to have_content("acebook")
+    expect(page).to have_content("Acebook")
   end
 end
