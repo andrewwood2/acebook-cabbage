@@ -1,6 +1,6 @@
-def submit_test_post
-  visit "/posts/new"
-  fill_in :post_content, with: "test post"
+def submit_test_post(content = "test post")
+  visit new_post_path
+  fill_in :post_content, with: content
   click_on "Create Post"
 end
 
@@ -14,6 +14,8 @@ def user_sign_up(name = "Bob")
 end
 
 def add_comment(comment)
+  visit '/'
+  click_on 'Comments'
   fill_in :body, with: comment
-  click_on "Create Comment"
+  click_on "Post"
 end
