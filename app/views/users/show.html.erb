@@ -42,8 +42,8 @@
                 <%=post.updated_at.strftime("%B %d at %I:%M%p")%>
               </h6>
               <% if @user == current_user %>
-              <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
-              <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
+                <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
+                <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
               <% end %>
             </div>
           </div>
