@@ -7,8 +7,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    redirect_to @post
+    # binding.irb
+# "User.first" is a workaround for 'current_user' (var generated from Devise params). When current_user is sorted, can put this back in.
+    # @post = current_user.posts.create!(post_params)
+    @post = User.first.posts.create!(post_params)
+    render "show"
   end
 
   def update
@@ -25,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    Comment.create
+
   end
 
   def destroy
