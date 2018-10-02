@@ -24,4 +24,4 @@ app/assets/*
 lib/assets/*
 vendor/assets/*
 app/helpers/*
-app/views/*
+app/x_archive_views/*

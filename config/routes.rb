@@ -11,16 +11,18 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [:show, :update, :edit]
 
-  resources :posts do
-    member do
-      put "like", to: "posts#add_like"
+  defaults format: :json do
+    resources :users, only: [:show, :update, :edit]
+
+    resources :friendships
+
+    resources :posts do
+      member do
+        put "like", to: "posts#add_like"
+      end
+      resources :comments
     end
-    resources :comments
+
   end
-
-  resources :friendships
-
-
 end
