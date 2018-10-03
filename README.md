@@ -65,3 +65,71 @@ Profile:
 Create post:
 
 ![Alt text](/wireframes/Write-post.png)
+
+## User Stories
+
+```
+As a user
+So that I can join the lasest social media platform Acebook
+I want to be able to sign up 
+
+As a user
+So that I make personal posts
+I want to be able to sign in to Acebook
+
+As a user 
+So that I can project my thoughts to the world
+I would like to create a post
+
+As a user 
+So that I can 
+I would like to see posts diplayed in reverse chronological order
+
+As a fickle user
+So that I can edit my opinions
+I would like to be able to edit a post
+
+As a post-first-think-later type of user
+So that I can remove all evidence of my most embarrassing posts
+I would like to be able to delete a post
+
+As a user 
+So that I can enter discourse with other Acebook users
+I want to be able to comment on posts
+
+As a user
+So that I can publicly show my approval
+I want to be able to like a post
+
+As a voyeuristic user 
+So that I can stalk other users
+I want to be able to add friends
+
+As a user 
+So that I can cut ties with my enemies
+I want to be able to unfriend another user
+
+As a user 
+So that I start global movements
+I want to be able to add hashtags to my posts
+
+As a user 
+So that I can keep up with the latest trends
+I want to see a list of trending hashtags
+
+As a user 
+So that I can keep up with the latests trends
+I want to see a list of trending hashtags
+
+As a user 
+So that I see a personalised view of a user
+I want to view a user's profile page
+
+As a photogenic user
+So that I can show my face to the world
+I want to add a profile picture
+
+As a user
+So that I can alter my online appearance
+I want to be able to update my profile picture
+```
