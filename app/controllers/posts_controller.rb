@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # respond_to :json
   before_action :find_post, only: [:update, :edit, :show, :destroy]
 
   def new
@@ -21,7 +22,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc)
+    render json: @posts
   end
 
   def show
