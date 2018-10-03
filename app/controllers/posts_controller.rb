@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   # respond_to :json
+  before_action :authenticate_user!, except: [:index, :show]
+
   before_action :find_post, only: [:update, :edit, :show, :destroy]
 
   def new
@@ -9,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to @post
+    render json: @post
   end
 
   def update

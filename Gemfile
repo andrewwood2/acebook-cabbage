@@ -32,8 +32,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 3.5'
 
 gem 'devise'
+gem 'devise-jwt'
 gem 'acts_as_votable'
 gem 'simple_hashtag'
+gem 'dotenv'
 
 gem 'timecop', '~> 0.9.1'
 
