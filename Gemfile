@@ -33,6 +33,7 @@ gem 'simple_form', '~> 3.5'
 
 gem 'devise'
 gem 'devise-jwt'
+# gem 'devise_token_auth'
 gem 'acts_as_votable'
 gem 'simple_hashtag'
 gem 'dotenv'
