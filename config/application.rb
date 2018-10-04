@@ -15,7 +15,7 @@ module Acebook
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options], expose: ['Authorization']
+        resource '*', headers: :any, methods: [:get, :head, :post, :put, :patch, :delete, :options], expose: ['Authorization']
       end
     end
 
