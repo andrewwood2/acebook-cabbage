@@ -1,6 +1,7 @@
 require "rails_helper"
 
-RSpec.describe Users::RegistrationsController, type: :controller do
+# RSpec.describe Users::RegistrationsController, type: :controller do
+RSpec.describe Users::RegistrationsController do
 
   # @request.env["devise.mapping"] = Devise.mappings[:user]
 
@@ -21,7 +22,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
     context "with valid params" do
       it "creates a new User" do
         expect {
-          post '#create', params: {user: valid_attributes}, session: valid_session
+          post '/users', params: {user: valid_attributes}
         }.to change(User, :count).by(1)
       end
 
