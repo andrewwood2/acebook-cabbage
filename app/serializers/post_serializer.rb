@@ -7,4 +7,5 @@ class PostSerializer < ActiveModel::Serializer
         profilepic: self.object.user.profilepic
     }
   end
+  has_many :comments, serializer: CommentSerializer
 end
