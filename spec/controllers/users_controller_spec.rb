@@ -1,9 +1,7 @@
 require "rails_helper"
 
-# RSpec.describe Users::RegistrationsController, type: :controller do
-RSpec.describe Users::RegistrationsController do
-
-  # @request.env["devise.mapping"] = Devise.mappings[:user]
+RSpec.describe Users::RegistrationsController, type: :controller do
+# RSpec.describe RegistrationsController do
 
   let(:valid_attributes) {
     { name: 'Bob',
@@ -19,39 +17,43 @@ RSpec.describe Users::RegistrationsController do
   let(:valid_session) { {} }
 
   describe "POST #create" do
+
+    before do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+    end
+
     context "with valid params" do
       it "creates a new User" do
         expect {
-          post '/users', params: {user: valid_attributes}
+          post :create, params: {user: valid_attributes}
         }.to change(User, :count).by(1)
       end
 
       it "renders a JSON response with the new user" do
-        post '/users', params: {user: valid_attributes}, session: valid_session
-        expect(response).to have_http_status(:created)
+        post :create, params: {user: valid_attributes}
+        expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
         user = User.last
         expect(JSON.parse(response.body)).to eq({
           "id" => user.id,
-          "handle" => user.handle
+          "name" => user.name
         })
-        expect(response.location).to eq(user_url(user))
       end
     end
 
     context "with invalid params" do
       it "renders a JSON response with errors for the new user" do
-        post '/users', params: {user: invalid_attributes}, session: valid_session
-        expect(response).to have_http_status(:unprocessable_entity)
+        post :create, params: {user: invalid_attributes}
+        expect(response).to have_http_status(:bad_request)
         expect(response.content_type).to eq('application/json')
       end
     end
 
     context "with a duplicate handle" do
       it "renders a JSON response with errors for the new user" do
-        post '/users', params: {user: valid_attributes}, session: valid_session
-        post '/users', params: {user: valid_attributes}, session: valid_session
-        expect(response).to have_http_status(:unprocessable_entity)
+        post :create, params: {user: valid_attributes}
+        post :create, params: {user: valid_attributes}
+        expect(response).to have_http_status(:bad_request)
         expect(response.content_type).to eq('application/json')
       end
     end
