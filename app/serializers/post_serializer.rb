@@ -3,7 +3,8 @@ class PostSerializer < ActiveModel::Serializer
   def user
     {
         user_id: self.object.user.id,
-        name: self.object.user.name
+        name: self.object.user.name,
+        profilepic: self.object.user.profilepic
     }
   end
 end
