@@ -16,7 +16,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post
     end
   end
 
@@ -34,13 +33,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
   end
 
   def add_like
     find_post
     @post.upvote_by current_user
-    redirect_to request.referer
   end
 
   private

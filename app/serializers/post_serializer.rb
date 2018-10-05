@@ -8,4 +8,5 @@ class PostSerializer < ActiveModel::Serializer
     }
   end
   has_many :comments, serializer: CommentSerializer
+  has_many :votes_for, serializer: VoteSerializer
 end
