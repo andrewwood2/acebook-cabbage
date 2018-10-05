@@ -32,10 +32,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 3.5'
 
 gem 'devise'
+gem 'devise-jwt'
+# gem 'devise_token_auth'
 gem 'acts_as_votable'
 gem 'simple_hashtag'
+gem 'dotenv'
 
 gem 'timecop', '~> 0.9.1'
+
+gem 'rack-cors', require: 'rack/cors'
+gem 'active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

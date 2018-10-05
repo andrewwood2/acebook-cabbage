@@ -1,15 +1,19 @@
+require 'dotenv'
+Dotenv.load
+
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.parent_controller = 'ActionController::Base'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'f4fef875e96c56426bf421d558350bcd48acbaa3ddbddb7ce13288b7827b086dc52b554260f18721d14fd28f2a209567cca50d9718f4a1f793ff7cc1194d8415'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -32,6 +36,20 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  config.jwt do |jwt|
+    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 1.day.to_i
+  end
+
+  # prevents devise using flash messages that are not present in Rails API mode
+  config.navigational_formats = []
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -52,6 +70,7 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
+
   config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.

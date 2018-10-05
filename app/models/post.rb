@@ -5,4 +5,8 @@ class Post < ApplicationRecord
 
   include SimpleHashtag::Hashtaggable
   hashtaggable_attribute :content
+
+  # def as_json(options = {})
+  #   super({ except: :user_id, methods: [:user, :likes] }.merge(options))
+  # end
 end

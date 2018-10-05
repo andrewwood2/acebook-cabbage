@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :inverse_friends, through: :inverse_friendships, source: :user
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :jwt_authenticatable, jwt_revocation_strategy: JWTBlacklist
 end
