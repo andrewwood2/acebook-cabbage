@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :find_user, only: [:show, :update, :edit]
 
   def show
     @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
     @friendship_rev = Friendship.where(user_id: current_user.id, friend_id: params[:id])
     @friendship = Friendship.where(user_id: params[:id], friend_id: current_user.id)
+
+    render json: {:posts => @posts, :user => @user}
+    # render json: @posts
   end
 
   def update
     @user.update(user_params)
-    redirect_to @user
+    render json: @user
   end
 
   def edit

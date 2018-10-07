@@ -1,35 +1,40 @@
 require "rails_helper"
+require "api_helper"
 
-RSpec.describe Users::RegistrationsController, type: :controller do
+RSpec.describe PostsController, type: :controller do
+  before do
+    sign_in(:user)
+  end
 
   let(:valid_attributes) {
-    { name: 'Bob',
-    email: 'bob@bob.com',
-    password: '123456',
-    password_confirmation: '123456' }
+    { content: 'Super interesting note' }
   }
 
   let(:invalid_attributes) {
-    { name: nil }
+    {  }
   }
 
   let(:valid_session) { {} }
 
   describe "POST #create" do
 
-    before do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
+    context "No sign in" do
+      it "rejects the new Post" do
+        post :create, params: {post: valid_attributes}
+        expect(response).to have_http_status(:unauthorized)
+      end
     end
 
     context "with valid params" do
-      it "creates a new User" do
+      it "creates a new Post" do
+
         expect {
-          post :create, params: {user: valid_attributes}
-        }.to change(User, :count).by(1)
+          post :create, params: {post: valid_attributes}
+        }.to change(Post, :count).by(1)
       end
 
       it "renders a JSON response with the new user" do
-        post :create, params: {user: valid_attributes}
+        post :create, params: {user: valid_attributes}, session: valid_session
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to eq('application/json')
         user = User.last
