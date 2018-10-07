@@ -2,9 +2,12 @@
 
 [![Build Status](https://travis-ci.org/andrewwood2/acebook-gazelle.svg?branch=master)](https://travis-ci.org/andrewwood2/acebook-gazelle)
 
-A social media clone.
+Acebook is a basic clone of a well known social media app. There are three repos to this project.  
+[Full stack Rails app](https://github.com/andrewwood2/acebook-gazelle)  
+[Back end Rails API](https://github.com/andrewwood2/acebook-be)  
+[Front end React app](https://github.com/andrewwood2/acebook-fe)  
 
-The card wall is here: https://waffle.io/andrewwood2/acebook-gazelle
+This is the full stack Rails app.
 
 ## Quickstart
 
@@ -18,6 +21,18 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Features
+* Sign up
+* Log in/out
+* Posts feed
+* New posts
+* Comments on posts
+* Like posts
+* Profile pages
+* Changing profile pictures
+* Friendships
+* Hashtags
 
 ## Technologies used:
 
@@ -34,10 +49,9 @@ Develop good team-working processes.
 
 Secondary goals:
 Be able to build and explain what's happening in a rails app.
-Good enough repo for a cv.
-Understanding and implementing deployment on AWS.
+Understanding and implementing deployment on Heroku.
 Understanding databases and ORMs.
-Staging environment understanding, middle stage.
+Continuous integration, via Travis CI.
 
 Strategies:
 Code quality over features.
@@ -71,18 +85,18 @@ Create post:
 ```
 As a user
 So that I can join the lasest social media platform Acebook
-I want to be able to sign up 
+I want to be able to sign up
 
 As a user
 So that I make personal posts
 I want to be able to sign in to Acebook
 
-As a user 
+As a user
 So that I can project my thoughts to the world
 I would like to create a post
 
-As a user 
-So that I can 
+As a user
+So that I can
 I would like to see posts diplayed in reverse chronological order
 
 As a fickle user
@@ -93,7 +107,7 @@ As a post-first-think-later type of user
 So that I can remove all evidence of my most embarrassing posts
 I would like to be able to delete a post
 
-As a user 
+As a user
 So that I can enter discourse with other Acebook users
 I want to be able to comment on posts
 
@@ -101,27 +115,27 @@ As a user
 So that I can publicly show my approval
 I want to be able to like a post
 
-As a voyeuristic user 
+As a voyeuristic user
 So that I can stalk other users
 I want to be able to add friends
 
-As a user 
+As a user
 So that I can cut ties with my enemies
 I want to be able to unfriend another user
 
-As a user 
+As a user
 So that I start global movements
 I want to be able to add hashtags to my posts
 
-As a user 
+As a user
 So that I can keep up with the latest trends
 I want to see a list of trending hashtags
 
-As a user 
+As a user
 So that I can keep up with the latests trends
 I want to see a list of trending hashtags
 
-As a user 
+As a user
 So that I see a personalised view of a user
 I want to view a user's profile page
 
