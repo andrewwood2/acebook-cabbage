@@ -7,6 +7,8 @@ Acebook is a basic clone of a well known social media app. There are three repos
 [Back end Rails API](https://github.com/andrewwood2/acebook-be)  
 [Front end React app](https://github.com/andrewwood2/acebook-fe)  
 
+We first built Acebook as a full stack Rails app, before splitting it into front end and back end.  
+
 This is the full stack Rails app.
 
 ## Quickstart
