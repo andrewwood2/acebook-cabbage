@@ -86,7 +86,7 @@ Create post:
 
 ```
 As a user
-So that I can join the lasest social media platform Acebook
+So that I can join the latest social media platform Acebook
 I want to be able to sign up
 
 As a user
@@ -98,8 +98,8 @@ So that I can project my thoughts to the world
 I would like to create a post
 
 As a user
-So that I can
-I would like to see posts diplayed in reverse chronological order
+So that I can see the most up to date news from my friends
+I would like to see posts displayed in reverse chronological order
 
 As a fickle user
 So that I can edit my opinions
