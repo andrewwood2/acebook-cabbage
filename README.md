@@ -11,6 +11,13 @@ We first built Acebook as a full stack Rails app, before splitting it into front
 
 This is the full stack Rails app.
 
+## Dev Team 
+[Aneel Marshall](https://github.com/marshall159) | 
+[Andrew Wood](https://github.com/andrewwood2) |
+[Becky Sedgwick](https://github.com/rebeccasedgwick) |
+[Josh Nickson](https://github.com/joshnickson) |
+[Kar-ho Lee](https://github.com/leekarho)
+
 ## Quickstart
 
 First, clone this repository. Then:
